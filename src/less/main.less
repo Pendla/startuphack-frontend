@@ -4,6 +4,12 @@
  * the Grunt configuration that is automatically processed.
  */
 
+/**
+ * Inlude normalizer, making sure that we start with the default look for all
+ * browsers, and that we don't have any weird styles that we have to overwrite
+ * manually every time.
+ */
+@import (inline) '../../vendor/normalize-css/normalize.css';
 
 /**
  * First, we include the Twitter Bootstrap LESS files. Only the ones used in the
