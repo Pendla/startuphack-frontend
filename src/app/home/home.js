@@ -42,19 +42,21 @@ HomeCtrl.$inject = ['apiFactory', '$state', '$scope', '$timeout'];
 function HomeCtrl(apiFactory, $state, $scope, $timeout){
   var vm = this;
 
-  vm.searchQuery = '';
+  vm.searchQuery = undefined;
   vm.index1 = 0;
   vm.count = 10;
-  vm.minPrice = 0;
-  vm.maxPrice = 0;
+  vm.minPrice = undefined;
+  vm.maxPrice = undefined;
+  vm.country = undefined;
 
   $scope.$watch('vm.searchQuery', function(){
+    console.log(vm.country);
     if(vm.searchQuery === ''){
       $state.go('home');
       return;
     }
     $state.go('home.list-view');
-    apiFactory.getArticles(vm.searchQuery, vm.index1, vm.count)
+    apiFactory.getArticles(vm.searchQuery, vm.index1, vm.count, vm.minPrice, vm.maxPrice, vm.country)
       .then(function(response){
         console.log(response);
         apiFactory.getResponse().response = response.data;
@@ -67,7 +69,7 @@ function HomeCtrl(apiFactory, $state, $scope, $timeout){
 
   vm.onSearch = function onSearch() {
     $state.go('home.list-view');
-    apiFactory.getArticles(vm.searchQuery, vm.index1, vm.count)
+    apiFactory.getArticles(vm.searchQuery, vm.index1, vm.count, vm.minPrice, vm.maxPrice, vm.country)
       .then(function(response){
         console.log(response);
         apiFactory.getResponse().response = response.data;

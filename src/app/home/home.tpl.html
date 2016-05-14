@@ -16,6 +16,16 @@
 </div>
 
 <div class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset-4 col-lg-8 col-lg-offset-2 filter-wrapper">
+    <input type="number" ng-model="vm.minPrice" />
+    <input type="number" ng-model="vm.maxPrice" />
+    <select name="country" ng-model="vm.country">
+      <option value="SE" placeholder="0">Sweden</option>
+      <option value="US" placeholder="0">USA</option>
+    </select>
+  </div>
+</div>
+<div class="row">
   <div ui-view="list"></div>
 </div>
 </div>

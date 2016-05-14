@@ -23,14 +23,15 @@ function apiFactory ($http) {
 
   /* user requests */
 
-  function getArticles(searchQuery, index, count, minprice, maxprice){
+  function getArticles(searchQuery, index, count, minPrice, maxPrice, country){
     return $http.get(apiBase + 'search', {
       params: {
         searchQuery: searchQuery,
         index: index,
         count: count,
-        minprice: minprice,
-        maxprice: maxprice
+        minPrice: minPrice,
+        maxPrice: maxPrice,
+        country: country
       }
     });
   }
