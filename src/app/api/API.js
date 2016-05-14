@@ -24,6 +24,7 @@ function apiFactory ($http) {
   /* user requests */
 
   function getArticles(searchQuery, index, count, minPrice, maxPrice, country){
+
     return $http.get(apiBase + 'search', {
       params: {
         searchQuery: searchQuery,
