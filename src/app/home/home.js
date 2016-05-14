@@ -14,7 +14,7 @@ angular.module( 'fnfjs.home', [
 .config(function config( $stateProvider ) {
   $stateProvider
     .state( 'home', {
-      url: '',
+      url: '/',
       views: {
         "main": {
           controller: 'HomeCtrl',
@@ -25,7 +25,7 @@ angular.module( 'fnfjs.home', [
       data:{ pageTitle: 'Home' }
     })
     .state('home.list-view', {
-      url: '/search',
+      url: 'search',
       views: {
         "list": {
           controller: 'ListViewCtrl',
@@ -48,34 +48,25 @@ function HomeCtrl(apiFactory, $state, $scope, $timeout){
   vm.minPrice = undefined;
   vm.maxPrice = undefined;
   vm.country = undefined;
+  vm.isLoading = false;
 
-  $scope.$watch('vm.searchQuery', function(){
-    console.log(vm.country);
+  vm.onSearch = function onSearch() {
     if(vm.searchQuery === ''){
       $state.go('home');
       return;
     }
-    $state.go('home.list-view');
-    apiFactory.getArticles(vm.searchQuery, vm.index1, vm.count, vm.minPrice, vm.maxPrice, vm.country)
-      .then(function(response){
-        console.log(response);
-        apiFactory.getResponse().response = response.data;
-      },
-      function(error){
-        console.log(error);
-      }
-    );
-  });
 
-  vm.onSearch = function onSearch() {
     $state.go('home.list-view');
+    vm.isLoading = true;
     apiFactory.getArticles(vm.searchQuery, vm.index1, vm.count, vm.minPrice, vm.maxPrice, vm.country)
       .then(function(response){
-        console.log(response);
+        vm.isLoading = false;
         apiFactory.getResponse().response = response.data;
       },
       function(error){
-        console.log(error);
+        vm.isLoading = false;
+        $state.go('home');
+        console.error(error);
       }
     );
   };

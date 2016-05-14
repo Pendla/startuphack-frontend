@@ -8,6 +8,8 @@
   text-align: center;
   letter-spacing: 2px;
   margin-bottom: 10px;
+
+  animation-duration: 1.5s;
 }
 
 .search-field-wrapper {
@@ -15,7 +17,24 @@
   padding: 7px;
   border-radius: 3px;
 
-  display: flex;
+  animation-duration: 1.5s;
+
+  .form-wrapper {
+    width: 100%;
+    display: flex;
+
+    form {
+      flex: 7;
+    }
+  }
+}
+
+.loader {
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+  padding: 10px 10px 3px 10px;
 }
 
 .search-field {

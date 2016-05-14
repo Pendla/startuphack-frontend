@@ -26,13 +26,6 @@ function ListViewCtrl(apiFactory, $scope){
 
   vm.items = apiFactory.getResponse();
 
-  $scope.$watch('vm.items', function(){
-    console.log(vm.items);
-    vm.items = apiFactory.getResponse();
-    console.log(apiFactory.getResponse());
-  });
-
-
   /**vm.items = [{
       name: "iPhone5",
       image: "http://cdn.gsmarena.com/vv/reviewsimg/apple-iphone-5/thumb_.jpg",
