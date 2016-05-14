@@ -2,6 +2,7 @@ angular.module('fnfjs', [
   'templates-app',
   'templates-common',
   'fnfjs.home',
+  'fnfjs.list-view',
   'ui.router'
 ])
 
