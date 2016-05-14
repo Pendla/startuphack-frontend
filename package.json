@@ -12,7 +12,9 @@
     "type": "git",
     "url": ""
   },
-  "dependencies": {},
+  "dependencies": {
+    "grunt-serve": "^0.1.6"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-bump": "0.0.6",

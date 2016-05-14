@@ -5,7 +5,8 @@ angular.module('API', [])
 apiFactory.$inject = ['$http'];
 
 function apiFactory ($http) {
-  var apiBase = "";
+  var apiBase = "46.191.97.59:8080/";
+  //var apiBase = "172.25.35.73:8080/"
 
   function getApiBase () {
     return apiBase;
@@ -14,7 +15,13 @@ function apiFactory ($http) {
   /* user requests */
 
   function getArticles(){
-    return dummydata;
+    return $http.get(apiBase + 'search', {
+      params: {
+        searchQuery: "hej",
+        index: 2,
+        count: 5
+      }
+    });
   }
 
   var dummydata =
@@ -151,7 +158,7 @@ function apiFactory ($http) {
   {"id":131,"article_name":"Clonazepam","article_price":"$4.18","seller_name":"Betty","seller_rating":4,"avatar":"https://robohash.org/quinemoamet.jpg?size=50x50\u0026set=set1"},
   {"id":132,"article_name":"BIOSOLIS Sun Milk UVA Sunscreen Face and Body Broad Spectrum SPF50 KIDS","article_price":"$5.37","seller_name":"Mary","seller_rating":2,"avatar":"https://robohash.org/laboriosammagnidoloribus.bmp?size=50x50\u0026set=set1"},
   {"id":133,"article_name":"INTENSIVE SKIN REPAIR","article_price":"$4.56","seller_name":"Louis","seller_rating":1,"avatar":"https://robohash.org/autvoluptatibusconsequatur.jpg?size=50x50\u0026set=set1"},
-  {"id":134,"article_name":"TRIFLUOPERAZINE","article_price":"$6.52","seller_name":"Deborah","seller_rating":4,"avatar":"https://robohash.org/repellatducimusquae.bmp?size=50x50\u0026set=set1"},
+  {"id":134,"article_name":"TRIFLUOPERAZINE","article_price":"$6.52","seller_name":"Deborah","seller_rating":4,"avatar":"https://robohash.org/repellatducimusquae.bmp?size=50x50\u0026set=set1"}
   ];
 
   return {

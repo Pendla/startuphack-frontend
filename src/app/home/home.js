@@ -32,5 +32,9 @@ HomeCtrl.$inject = ['apiFactory'];
 
 function HomeCtrl(apiFactory){
   var vm = this;
-  console.log(apiFactory.getArticles());
+
+  apiFactory.getArticles()
+    .then(function(response){
+      console.log(response);
+    });
 }
