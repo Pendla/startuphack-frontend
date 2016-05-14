@@ -35,7 +35,7 @@ function ListViewCtrl(){
       url: "www.google.com",
       currency: "SEK"
     },{
-      name: "iPhone5",
+      name: "iPhone6",
       image: "http://cdn.gsmarena.com/vv/reviewsimg/apple-iphone-5/thumb_.jpg",
       description: "Really nice iPhone, not used at all",
       price: "5000",
@@ -45,7 +45,7 @@ function ListViewCtrl(){
       url: "www.google.com",
       currency: "SEK"
     },{
-      name: "iPhone5",
+      name: "iPhone7",
       image: "http://cdn.gsmarena.com/vv/reviewsimg/apple-iphone-5/thumb_.jpg",
       description: "Really nice iPhone, not used at all",
       price: "5000",
