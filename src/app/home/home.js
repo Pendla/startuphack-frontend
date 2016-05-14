@@ -30,16 +30,17 @@ HomeCtrl.$inject = ['apiFactory'];
 function HomeCtrl(apiFactory){
   var vm = this;
 
+  vm.searchQuery = '';
+
   vm.onSearch = function onSearch() {
     console.log('performing search');
+    apiFactory.getArticles(vm.searchQuery)
+      .then(function(response){
+        console.log(response);
+      },
+      function(error){
+        console.log(error);
+      }
+    );
   };
-
-  apiFactory.getArticles()
-    .then(function(response){
-      console.log(response);
-    },
-    function(error){
-      console.log(error);
-    }
-  );
 }
