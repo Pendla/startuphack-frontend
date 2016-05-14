@@ -37,23 +37,40 @@ angular.module( 'fnfjs.home', [
     });
 });
 
-HomeCtrl.$inject = ['apiFactory', '$state', '$scope'];
+HomeCtrl.$inject = ['apiFactory', '$state', '$scope', '$timeout'];
 
-function HomeCtrl(apiFactory, $state, $scope){
+function HomeCtrl(apiFactory, $state, $scope, $timeout){
   var vm = this;
 
   vm.searchQuery = '';
+  vm.index1 = 0;
+  vm.count = 10;
+  vm.minPrice = 0;
+  vm.maxPrice = 0;
 
   $scope.$watch('vm.searchQuery', function(){
-    console.log("Change");
+    if(vm.searchQuery === ''){
+      $state.go('home');
+      return;
+    }
+    $state.go('home.list-view');
+    apiFactory.getArticles(vm.searchQuery, vm.index1, vm.count)
+      .then(function(response){
+        console.log(response);
+        apiFactory.getResponse().response = response.data;
+      },
+      function(error){
+        console.log(error);
+      }
+    );
   });
 
   vm.onSearch = function onSearch() {
-    console.log('performing search');
     $state.go('home.list-view');
-    apiFactory.getArticles(vm.searchQuery)
+    apiFactory.getArticles(vm.searchQuery, vm.index1, vm.count)
       .then(function(response){
         console.log(response);
+        apiFactory.getResponse().response = response.data;
       },
       function(error){
         console.log(error);
