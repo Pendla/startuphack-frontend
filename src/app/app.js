@@ -20,4 +20,31 @@ angular.module( 'fnfjs', [
   });
 })
 
+.directive('background', ['$interval', function ($interval) {
+  function link (scope, element, attr) {
+    function nextBackground() {
+      // The number of backgrounds located in /assets/bgs/
+      var backgroundCount = 3;
+      // Pick a random new background.
+      var imageNumber = Math.floor((Math.random() * backgroundCount) + 1);
+
+      // TODO: Make sure that it is not the same as last time.
+
+      return imageNumber + '.jpg';
+    }
+
+    function updateBackground() {
+      element.css('background-image', 'url(assets/bgs/' + nextBackground() + ')');
+    }
+
+    $interval(function () {
+      updateBackground();
+    }, 5000);
+  }
+
+  return {
+    link: link
+  };
+}])
+
 ;

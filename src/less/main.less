@@ -68,17 +68,27 @@ h2 {
   color: #666;
 }
 
+.background {
+  background-image: url('bgs/1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
-/**
- * Navigation
- */
+  -webkit-transition: background-image 1.0s ease-out;
+  transition: background-image 1.0s ease-out;
 
-.navbar {
-  margin-top: 20px;
-
-  small {
-    font-size: 60%;
-  }
+  min-width: 100px;
+  // display: inline-block;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 
