@@ -9,7 +9,7 @@ angular.module('fnfjs', [
 .constant('_', window._)
 
 .config(function myAppConfig ( $stateProvider, $urlRouterProvider ) {
-  $urlRouterProvider.otherwise( '' );
+  $urlRouterProvider.otherwise( '/' );
 })
 
 .run(function run () {

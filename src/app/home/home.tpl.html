@@ -6,16 +6,26 @@
   </div>
   <div class="col-xs-12 col-md-6 col-md-offset-4 col-lg-8 col-lg-offset-2">
     <div class="search-field-wrapper animated" ng-class="{ fadeInUp: true }">
-      <input type="text" class="search-field" ng-model="vm.searchQuery"
-      ng-model-options="{debounce: 400}" placeholder="Search for a product...">
-      <div class="red-button search-button" ng-click="vm.onSearch()">
-        <i class="fa fa-search" aria-hidden="true"></i>
+      <div class="form-wrapper">
+        <form ng-submit="vm.onSearch()">
+          <input
+            type="text"
+            class="search-field"
+            ng-model="vm.searchQuery"
+            ng-model-options="{ debounce: 600 }"
+            placeholder="Search for a product..." />
+        </form>
+        <div class="red-button search-button" ng-click="vm.onSearch()">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="loader" ng-if="vm.isLoading">
+        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
       </div>
     </div>
   </div>
 </div>
 
-<div class="row">
+<div class="row" ng-if="!vm.isLoading">
   <div ui-view="list"></div>
-</div>
 </div>
