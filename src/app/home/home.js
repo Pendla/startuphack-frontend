@@ -34,7 +34,7 @@ function HomeCtrl(apiFactory){
       console.log(response);
     },
     function(error){
-      console.log("hallå");
+      console.log(error);
     }
   );
 }
