@@ -22,7 +22,7 @@ module.exports = {
   app_files: {
     js: [ 'src/**/*.js', '!src/**/*.spec.js', '!src/assets/**/*.js' ],
     jsunit: [ 'src/**/*.spec.js' ],
-    
+
     coffee: [ 'src/**/*.coffee', '!src/**/*.spec.coffee' ],
     coffeeunit: [ 'src/**/*.spec.coffee' ],
 
@@ -70,12 +70,20 @@ module.exports = {
       'vendor/angular-ui-utils/modules/route/route.js',
       'vendor/angular-animate/angular-animate.min.js',
       'vendor/angular-cookies/angular-cookies.min.js',
-      'vendor/angular-sanitize/angular-sanitize.min.js'
-
+      'vendor/angular-sanitize/angular-sanitize.min.js',
+      'vendor/lodash/dist/lodash.min.js'
     ],
     css: [
+      'vendor/css/components-font-awesome/font-awesome.min.css'
     ],
     assets: [
+      'assets/fonts/LemonMilk.woff',
+      'vendor/css/components-font-awesome/fonts/fontawesome-webfont.eot',
+      'vendor/css/components-font-awesome/fonts/fontawesome-webfont.svg',
+      'vendor/css/components-font-awesome/fonts/fontawesome-webfont.ttf',
+      'vendor/css/components-font-awesome/fonts/fontawesome-webfont.woff',
+      'vendor/css/components-font-awesome/fonts/fontawesome-webfont.woff2',
+      'vendor/css/components-font-awesome/fonts/FontAwesome.otf'
     ]
   },
 };
