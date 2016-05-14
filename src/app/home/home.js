@@ -24,10 +24,6 @@ angular.module( 'fnfjs.home', [
   });
 });
 
-/**
- * And of course we define a controller for our route.
- */
-
 HomeCtrl.$inject = ['apiFactory'];
 
 function HomeCtrl(apiFactory){
