@@ -19,12 +19,21 @@ angular.module( 'fnfjs.list-view', [
   });
 });*/
 
-ListViewCtrl.$inject = [];
+ListViewCtrl.$inject = ['apiFactory', '$scope'];
 
-function ListViewCtrl(){
+function ListViewCtrl(apiFactory, $scope){
   var vm = this;
 
-  vm.items = [{
+  vm.items = apiFactory.getResponse();
+
+  $scope.$watch('vm.items', function(){
+    console.log(vm.items);
+    vm.items = apiFactory.getResponse();
+    console.log(apiFactory.getResponse());
+  });
+
+
+  /**vm.items = [{
       name: "iPhone5",
       image: "http://cdn.gsmarena.com/vv/reviewsimg/apple-iphone-5/thumb_.jpg",
       description: "Really nice iPhone, not used at all",
@@ -55,5 +64,5 @@ function ListViewCtrl(){
       url: "www.google.com",
       currency: "SEK"
     }
-  ];
+  ];*/
 }
