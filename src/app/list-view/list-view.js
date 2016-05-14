@@ -3,9 +3,9 @@ angular.module( 'fnfjs.list-view', [
   'ui.router'
 ])
 
-.controller('ListViewCtrl', ListViewCtrl)
+.controller('ListViewCtrl', ListViewCtrl);
 
-.config(function config( $stateProvider ) {
+/**.config(function config( $stateProvider ) {
   $stateProvider.state( 'list-view', {
     url: '/search',
     views: {
@@ -17,7 +17,7 @@ angular.module( 'fnfjs.list-view', [
     },
     data:{ pageTitle: 'Search result' }
   });
-});
+});*/
 
 ListViewCtrl.$inject = [];
 
@@ -54,6 +54,6 @@ function ListViewCtrl(){
       country: "Sweden",
       url: "www.google.com",
       currency: "SEK"
-    },
+    }
   ];
 }

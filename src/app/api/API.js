@@ -20,7 +20,6 @@ function apiFactory ($http) {
   /* user requests */
 
   function getArticles(searchQuery, index, count, minprice, maxprice){
-
       return $http.get(apiBase + 'search', {
         params: {
           searchQuery: searchQuery,
@@ -32,4 +31,3 @@ function apiFactory ($http) {
       });
     }
   }
-}
