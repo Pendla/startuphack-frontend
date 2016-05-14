@@ -14,6 +14,7 @@
 
 .search-field-wrapper {
   background: rgba(0, 0, 0, 0.3);
+  overflow: auto;
   padding: 7px;
   border-radius: 3px;
 
@@ -57,5 +58,60 @@
 }
 
 .filter-wrapper {
-  height: 45px;
+  padding-top: 10px;
+  color: #fff;
+
+  .country-icon, .price-icon {
+    width: 20px;
+  }
+
+  .price-selector {
+    margin-top: 5px;
+
+    input {
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      height: 30px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.3);
+      margin: 0;
+    }
+  }
+
+  .country-selector {
+    display: block;
+    margin-top: 10px;
+  }
+
+  select {
+    height: 30px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    min-width: 355px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  // select {
+  //   -webkit-appearance: none;
+  //   -moz-appearance: none;
+  //   appearance: none;
+
+  //   border-radius: 0px;
+  //   border: none;
+  //   background: #fff;
+
+  //   position: relative;
+  //   height: 25px;
+
+  //   &:after {
+  //     content: 'd';
+  //     width: 10px;
+  //     height: 10px;
+  //     position: absolute;
+  //     right: 0;
+  //     top: 12px;
+  //   }
+  // }
 }
