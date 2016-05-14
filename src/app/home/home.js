@@ -37,13 +37,16 @@ angular.module( 'fnfjs.home', [
     });
 });
 
-HomeCtrl.$inject = ['apiFactory', '$state'];
+HomeCtrl.$inject = ['apiFactory', '$state', '$scope'];
 
-function HomeCtrl(apiFactory, $state){
+function HomeCtrl(apiFactory, $state, $scope){
   var vm = this;
 
   vm.searchQuery = '';
-  vm.onsearch =
+
+  $scope.$watch('vm.searchQuery', function(){
+    console.log("Change");
+  });
 
   vm.onSearch = function onSearch() {
     console.log('performing search');
