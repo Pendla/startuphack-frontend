@@ -21,7 +21,6 @@ function apiFactory ($http) {
 
   function getArticles(searchQuery, index, count, minprice, maxprice){
 
-    if(minprice && maxprice){
       return $http.get(apiBase + 'search', {
         params: {
           searchQuery: searchQuery,
@@ -29,35 +28,6 @@ function apiFactory ($http) {
           count: count,
           minprice: minprice,
           maxprice: maxprice
-        }
-      });
-    }
-    else if (maxprice) {
-      return $http.get(apibase + 'search', {
-        params: {
-          searchQuery: searchQuery,
-          index: index,
-          count: count,
-          maxprice: maxprice
-        }
-      });
-    }
-    else if (minprice) {
-      return $http.get(apibase + 'search', {
-        params: {
-          searchQuery: searchQuery,
-          index: index,
-          count: count,
-          minprice: minprice
-        }
-      });
-    }
-    else{
-      return $http.get(apiBase + 'search', {
-        params: {
-          searchQuery: "hej",
-          index: 2,
-          count: 5
         }
       });
     }
