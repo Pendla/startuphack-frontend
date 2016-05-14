@@ -1,7 +1,10 @@
 
 angular.module( 'fnfjs.home', [
-  'ui.router'
+  'ui.router',
+  'API'
 ])
+
+.controller('HomeCtrl', HomeCtrl)
 
 /**
  * Each section or module of the site can also have its own routes. AngularJS
@@ -19,14 +22,15 @@ angular.module( 'fnfjs.home', [
     },
     data:{ pageTitle: 'Home' }
   });
-})
+});
 
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController(  ) {
+
+HomeCtrl.$inject = ['apiFactory'];
+
+function HomeCtrl(apiFactory){
   var vm = this;
-})
-
-;
-
+  console.log(apiFactory.getArticles());
+}
