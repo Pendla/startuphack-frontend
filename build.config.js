@@ -74,7 +74,8 @@ module.exports = {
       'vendor/lodash/dist/lodash.min.js'
     ],
     css: [
-      'vendor/css/components-font-awesome/font-awesome.min.css'
+      'vendor/css/components-font-awesome/font-awesome.min.css',
+      'vendor/css/animate.css/animate.min.css'
     ],
     assets: [
       'assets/fonts/LemonMilk.woff',

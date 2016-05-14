@@ -37,12 +37,18 @@ angular.module( 'fnfjs.home', [
     });
 });
 
-HomeCtrl.$inject = ['apiFactory', '$state', '$scope'];
+HomeCtrl.$inject = ['apiFactory', '$state', '$scope', '$timeout'];
 
-function HomeCtrl(apiFactory, $state, $scope){
+function HomeCtrl(apiFactory, $state, $scope, $timeout){
   var vm = this;
 
   vm.searchQuery = '';
+
+  // Trigger company name
+  $timeout(function () {
+    console.log('Show company name');
+    vm.showName = true;
+  }, 3000);
 
   $scope.$watch('vm.searchQuery', function(){
     console.log("Change");
