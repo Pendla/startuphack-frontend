@@ -10,7 +10,6 @@ function apiFactory ($http) {
   return {
     getArticles: getArticles,
     getApiBase: getApiBase
-
   };
 
   function getApiBase () {
@@ -20,14 +19,14 @@ function apiFactory ($http) {
   /* user requests */
 
   function getArticles(searchQuery, index, count, minprice, maxprice){
-      return $http.get(apiBase + 'search', {
-        params: {
-          searchQuery: searchQuery,
-          index: index,
-          count: count,
-          minprice: minprice,
-          maxprice: maxprice
-        }
-      });
-    }
+    return $http.get(apiBase + 'search', {
+      params: {
+        searchQuery: searchQuery,
+        index: index,
+        count: count,
+        minprice: minprice,
+        maxprice: maxprice
+      }
+    });
   }
+}
