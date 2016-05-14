@@ -17,6 +17,7 @@ angular.module( 'fnfjs.home', [
     views: {
       "main": {
         controller: 'HomeCtrl',
+        controllerAs: 'vm',
         templateUrl: 'home/home.tpl.html'
       }
     },
@@ -28,6 +29,10 @@ HomeCtrl.$inject = ['apiFactory'];
 
 function HomeCtrl(apiFactory){
   var vm = this;
+
+  vm.onSearch = function onSearch() {
+    console.log('performing search');
+  };
 
   apiFactory.getArticles()
     .then(function(response){
