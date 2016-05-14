@@ -36,5 +36,9 @@ function HomeCtrl(apiFactory){
   apiFactory.getArticles()
     .then(function(response){
       console.log(response);
-    });
+    },
+    function(error){
+      console.log("hallå");
+    }
+  );
 }

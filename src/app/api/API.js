@@ -5,7 +5,7 @@ angular.module('API', [])
 apiFactory.$inject = ['$http'];
 
 function apiFactory ($http) {
-  var apiBase = "46.191.97.59:8080/";
+  var apiBase = "http://46.191.97.59:8080/";
   //var apiBase = "172.25.35.73:8080/"
 
   function getApiBase () {
